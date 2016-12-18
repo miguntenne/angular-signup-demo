@@ -1,0 +1,29 @@
+<div class="form-container">
+  <div uib-alert ng-repeat="alert in register.alerts" ng-class="'alert-' + (alert.type || 'warning')" close="register.closeAlert($index)">{{alert.msg}}</div>
+  <h2 class="text-center">Register</h2>
+  <form name="registerForm" novalidate ng-submit="register.register(registerForm.$valid)">
+    <div class="form-group" ng-class="{ 'has-error' : registerForm.email.$invalid && registerForm.email.$dirty}">
+      <input type="email" name="email" placeholder="Email" ng-model="register.user.email" class="form-control" required>
+      <small ng-show="registerForm.email.$invalid && registerForm.email.$dirty" class="error-msg">Incorrect email pattern</small>
+    </div>
+    <div class="form-group">
+      <input type="password" name="password" placeholder="Password" ng-model="register.user.password" class="form-control" required>
+      <input type="password" name="confPassword" placeholder="Confirm password" ng-model="register.confirmPassword" class="form-control" required>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-6">
+        <select class="form-control" ng-model="register.user.countryCode" required>
+          <option value="">Select country code</option>
+          <option ng-repeat="code in register.countryCodeList" value="{{code.code}}">{{code.name}} - {{code.dial_code}}</option>
+        </select>
+      </div>
+      <div class="col-xs-6">
+        <input type="tel" placeholder="Number" class="form-control" ng-model="register.user.phone" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success" ng-disabled="registerForm.$invalid">Register</button>
+      <a class="btn btn-link" href="#!login">Cancel</a>
+    </div>
+  </form>
+</div>

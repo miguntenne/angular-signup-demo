@@ -1,0 +1,8 @@
+.idea/
+node_modules/
+platforms/
+plugins/
+.DS_Store
+public/lib/
+.npmignore
+npm-debug.log

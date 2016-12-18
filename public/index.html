@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- app css -->
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body ng-app="loginDemo" class="jumbotron">
+
+    <div ng-view></div>
+
+    <!-- vendor scripts -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-touch/angular-touch.min.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+
+    <!-- app scripts -->
+    <script src="index.module.js"></script>
+    <script src="pages/register/register.controller.js"></script>
+    <script src="pages/login/login.controller.js"></script>
+    <script src="pages/home/home.controller.js"></script>
+    <script src="pages/two-factor-auth/two-factor-auth.controller.js"></script>
+    <script src="shared/shared.module.js"></script>
+    <script src="shared/user-database.service.js"></script>
+    <script src="shared/data.service.js"></script>
+    <script src="shared/auth.service.js"></script>
+    <script src="index.route.js"></script>
+    <script src="index.run.js"></script>
+
+  </body>
+</html>

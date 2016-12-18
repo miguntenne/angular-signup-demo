@@ -1,0 +1,12 @@
+.form-container {
+    width: 400px;
+    margin: auto;
+    padding-top: 60px;
+}
+.title {
+  text-align: center;
+}
+.error-msg {
+  font-size: 10px;
+  color: red;
+}

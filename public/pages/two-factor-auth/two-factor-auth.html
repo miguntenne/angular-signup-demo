@@ -1,0 +1,13 @@
+<div class="form-container">
+  <div uib-alert ng-repeat="alert in auth.alerts" ng-class="'alert-' + (alert.type || 'warning')" close="auth.closeAlert($index)">{{alert.msg}}</div>
+  <h2 class="text-center">Two-Factor Authentication</h2>
+  <form name="authForm" novalidate>
+    <div class="form-group">
+      <input type="text" placeholder="Token" name="token" ng-model="auth.token" class="form-control">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success" ng-click="auth.authOneTouch()">One Touch</button>
+      <button type="submit" ng-click="auth.verifyToken()" class="btn btn-secondary" ng-disabled="!auth.verifyEnabled">Verify</button>
+    </div>
+  </form>
+</div>
